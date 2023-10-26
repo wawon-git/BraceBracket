@@ -3,14 +3,14 @@ import { getDatabase } from "firebase/database"
 
 // Firebase 設定（公開してもよい）
 const firebaseConfig = {
-  apiKey: "AIzaSyD-Nzhi2nzBgFhoK44B_bnKefnuEXGqgow",
-  authDomain: "bracebracket-24d9f.firebaseapp.com",
-  databaseURL:
-    "https://bracebracket-24d9f-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "bracebracket-24d9f",
-  storageBucket: "bracebracket-24d9f.appspot.com",
-  messagingSenderId: "844635716199",
-  appId: "1:844635716199:web:afe5e7c533f2604878b2c2",
+  apiKey: "AIzaSyBEC4HLHfh0CbcS338ubnBr3wXEbc8ocbo",
+  authDomain: "inbound-mote-367115.firebaseapp.com",
+  databaseURL: "https://inbound-mote-367115-default-rtdb.firebaseio.com",
+  projectId: "inbound-mote-367115",
+  storageBucket: "inbound-mote-367115.appspot.com",
+  messagingSenderId: "483654286704",
+  appId: "1:483654286704:web:04558bb78d915d0c9963b5",
+  measurementId: "G-30ZKRS9785",
 }
 
 // Firebase の初期化
