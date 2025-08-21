@@ -1,18 +1,23 @@
+// Import the functions you need from the SDKs you need
+import { getAnalytics } from "firebase/analytics"
 import { initializeApp } from "firebase/app"
-import { getDatabase } from "firebase/database"
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Firebase 設定（公開してもよい）
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD-Nzhi2nzBgFhoK44B_bnKefnuEXGqgow",
-  authDomain: "bracebracket-24d9f.firebaseapp.com",
+  apiKey: "AIzaSyCzXPL4jg_9d1nt9CBkkQ07YA57OtePrVQ",
+  authDomain: "brace-bracket-rive.firebaseapp.com",
   databaseURL:
-    "https://bracebracket-24d9f-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "bracebracket-24d9f",
-  storageBucket: "bracebracket-24d9f.appspot.com",
-  messagingSenderId: "844635716199",
-  appId: "1:844635716199:web:afe5e7c533f2604878b2c2",
+    "https://brace-bracket-rive-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "brace-bracket-rive",
+  storageBucket: "brace-bracket-rive.firebasestorage.app",
+  messagingSenderId: "234766151609",
+  appId: "1:234766151609:web:3db6b162a2ff160e631068",
+  measurementId: "G-YNWX921RFK",
 }
 
-// Firebase の初期化
+// Initialize Firebase
 const app = initializeApp(firebaseConfig)
-export const db = getDatabase(app)
+const analytics = getAnalytics(app)
