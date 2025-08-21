@@ -99,7 +99,7 @@ const fetchEventsInfo = async (variables: {
   return await fetch(`https://api.smash.gg/gql/alpha`, {
     method: "POST",
     headers: {
-      Authorization: "Bearer b27e9778c425efba77751add00796217",
+      Authorization: "Bearer 2acf9ae9a7abae15651e9295f32ce9b5",
       "Content-Type": "application/json",
       Accept: "application/json",
       encoding: "utf-8",
