@@ -21,5 +21,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
+
+// Initialize Analytics only in browser environment
+let analytics
+if (typeof window !== "undefined") {
+  analytics = getAnalytics(app)
+}
+
 export const db = getDatabase(app)
+export { analytics }
