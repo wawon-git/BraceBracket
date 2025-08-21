@@ -5,6 +5,24 @@ export type Attendee = {
   playerName: string
 }[]
 
+interface EntrantNode {
+  name?: string
+}
+
+interface QueryResponse {
+  data?: {
+    event?: {
+      entrants?: {
+        pageInfo?: {
+          totalPages?: number
+        }
+        nodes?: EntrantNode[]
+      }
+    }
+  }
+  errors?: string[]
+}
+
 const query = `
 query getAttendee($eventSlug: String!, $page: Int) {
   event(slug: $eventSlug) {
@@ -40,7 +58,7 @@ export const getAttendee = async (url?: string): Promise<Attendee> => {
     const res = await fetch(`https://api.smash.gg/gql/alpha`, {
       method: "POST",
       headers: {
-        Authorization: "Bearer b27e9778c425efba77751add00796217",
+        Authorization: "Bearer 2acf9ae9a7abae15651e9295f32ce9b5",
         "Content-Type": "application/json",
         Accept: "application/json",
         encoding: "utf-8",
@@ -57,13 +75,14 @@ export const getAttendee = async (url?: string): Promise<Attendee> => {
     }
 
     totalPages = res?.data?.event?.entrants?.pageInfo?.totalPages
-    const attendee = res?.data?.event?.entrants?.nodes?.map((entrant: any) => {
-      const { team, name } = getNameAndTeamtag(entrant?.name ?? "")
-      return {
-        team,
-        playerName: name,
-      }
-    })
+    const attendee =
+      res?.data?.event?.entrants?.nodes?.map((entrant: EntrantNode) => {
+        const { team, name } = getNameAndTeamtag(entrant?.name ?? "")
+        return {
+          team,
+          playerName: name,
+        }
+      }) ?? []
     totalAttendee = [...totalAttendee, ...attendee]
   }
   if (!totalAttendee) {

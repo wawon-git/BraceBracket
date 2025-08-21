@@ -15,6 +15,8 @@
     "chromatic": "chromatic"
   },
   "dependencies": {
+    "@rive-app/react-canvas": "^4.22.1",
+    "@rive-app/react-webgl2": "^4.22.1",
     "bulma": "^0.9.4",
     "mustache": "^4.2.0",
     "next": "12.1.6",
