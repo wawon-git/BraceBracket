@@ -58,7 +58,7 @@ export const getAttendee = async (url?: string): Promise<Attendee> => {
     const res = await fetch(`https://api.smash.gg/gql/alpha`, {
       method: "POST",
       headers: {
-        Authorization: "Bearer 2acf9ae9a7abae15651e9295f32ce9b5",
+        Authorization: "Bearer 2d1a68f32b1baf8b2b25aae5569f9dca",
         "Content-Type": "application/json",
         Accept: "application/json",
         encoding: "utf-8",
