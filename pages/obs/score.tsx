@@ -32,7 +32,7 @@ const Layout: NextPage = () => {
   const defaultBound = useViewModelInstance(viewModel, { rive })
 
   const { value: p1Name, setValue: setP1Name } = useViewModelInstanceString(
-    "p1/playerName", // Property path
+    "p1/name", // Property path
     defaultBound
   )
   setP1Name(score?.p1.playerName || "")
@@ -51,7 +51,7 @@ const Layout: NextPage = () => {
   setP1Score(score?.p1.score || 0)
 
   const { value: p2Name, setValue: setP2Name } = useViewModelInstanceString(
-    "p2/playerName", // Property path
+    "p2/name", // Property path
     defaultBound
   )
   setP2Name(score?.p2.playerName || "")
