@@ -3,7 +3,6 @@ import {
   useViewModel,
   useViewModelInstance,
   useViewModelInstanceString,
-  useViewModelInstanceNumber,
 } from "@rive-app/react-webgl2"
 import Head from "next/head"
 import { useRouter } from "next/router"
@@ -189,16 +188,20 @@ export const Bracket: FC = () => {
   setGrandFinalResetP1Name(bracket.grandFinalReset[0]?.player1?.name || "")
 
   const { value: grandFinalResetP1Score, setValue: setGrandFinalResetP1Score } =
-    useViewModelInstanceNumber("grandFinalReset/p1/score", defaultBound)
-  setGrandFinalResetP1Score(bracket.grandFinalReset[0]?.player1?.score || 0)
+    useViewModelInstanceString("grandFinalReset/p1/bracketScore", defaultBound)
+  setGrandFinalResetP1Score(
+    bracket.grandFinalReset[0]?.player1?.score?.toString() || ""
+  )
 
   const { value: grandFinalResetP2Name, setValue: setGrandFinalResetP2Name } =
     useViewModelInstanceString("grandFinalReset/p2/name", defaultBound)
   setGrandFinalResetP2Name(bracket.grandFinalReset[0]?.player2?.name || "")
 
   const { value: grandFinalResetP2Score, setValue: setGrandFinalResetP2Score } =
-    useViewModelInstanceNumber("grandFinalReset/p2/score", defaultBound)
-  setGrandFinalResetP2Score(bracket.grandFinalReset[0]?.player2?.score || 0)
+    useViewModelInstanceString("grandFinalReset/p2/bracketScore", defaultBound)
+  setGrandFinalResetP2Score(
+    bracket.grandFinalReset[0]?.player2?.score?.toString() || ""
+  )
 
   // Grand Final
   const { value: grandFinalP1Name, setValue: setGrandFinalP1Name } =
@@ -206,16 +209,16 @@ export const Bracket: FC = () => {
   setGrandFinalP1Name(bracket.grandFinal[0]?.player1?.name || "")
 
   const { value: grandFinalP1Score, setValue: setGrandFinalP1Score } =
-    useViewModelInstanceNumber("grandFinal/p1/score", defaultBound)
-  setGrandFinalP1Score(bracket.grandFinal[0]?.player1?.score || 0)
+    useViewModelInstanceString("grandFinal/p1/bracketScore", defaultBound)
+  setGrandFinalP1Score(bracket.grandFinal[0]?.player1?.score?.toString() || "")
 
   const { value: grandFinalP2Name, setValue: setGrandFinalP2Name } =
     useViewModelInstanceString("grandFinal/p2/name", defaultBound)
   setGrandFinalP2Name(bracket.grandFinal[0]?.player2?.name || "")
 
   const { value: grandFinalP2Score, setValue: setGrandFinalP2Score } =
-    useViewModelInstanceNumber("grandFinal/p2/score", defaultBound)
-  setGrandFinalP2Score(bracket.grandFinal[0]?.player2?.score || 0)
+    useViewModelInstanceString("grandFinal/p2/bracketScore", defaultBound)
+  setGrandFinalP2Score(bracket.grandFinal[0]?.player2?.score?.toString() || "")
 
   // Winners Final
   const { value: winnersFinalP1Name, setValue: setWinnersFinalP1Name } =
@@ -223,16 +226,20 @@ export const Bracket: FC = () => {
   setWinnersFinalP1Name(bracket.winnersFinal[0]?.player1?.name || "")
 
   const { value: winnersFinalP1Score, setValue: setWinnersFinalP1Score } =
-    useViewModelInstanceNumber("winnersFinal/p1/score", defaultBound)
-  setWinnersFinalP1Score(bracket.winnersFinal[0]?.player1?.score || 0)
+    useViewModelInstanceString("winnersFinal/p1/bracketScore", defaultBound)
+  setWinnersFinalP1Score(
+    bracket.winnersFinal[0]?.player1?.score?.toString() || ""
+  )
 
   const { value: winnersFinalP2Name, setValue: setWinnersFinalP2Name } =
     useViewModelInstanceString("winnersFinal/p2/name", defaultBound)
   setWinnersFinalP2Name(bracket.winnersFinal[0]?.player2?.name || "")
 
   const { value: winnersFinalP2Score, setValue: setWinnersFinalP2Score } =
-    useViewModelInstanceNumber("winnersFinal/p2/score", defaultBound)
-  setWinnersFinalP2Score(bracket.winnersFinal[0]?.player2?.score || 0)
+    useViewModelInstanceString("winnersFinal/p2/bracketScore", defaultBound)
+  setWinnersFinalP2Score(
+    bracket.winnersFinal[0]?.player2?.score?.toString() || ""
+  )
 
   // Winners Semi Final 1
   const {
@@ -244,8 +251,13 @@ export const Bracket: FC = () => {
   const {
     value: winnersSemiFinal1P1Score,
     setValue: setWinnersSemiFinal1P1Score,
-  } = useViewModelInstanceNumber("winnersSemiFinal1/p1/score", defaultBound)
-  setWinnersSemiFinal1P1Score(bracket.winnersSemiFinal[0]?.player1?.score || 0)
+  } = useViewModelInstanceString(
+    "winnersSemiFinal1/p1/bracketScore",
+    defaultBound
+  )
+  setWinnersSemiFinal1P1Score(
+    bracket.winnersSemiFinal[0]?.player1?.score?.toString() || ""
+  )
 
   const {
     value: winnersSemiFinal1P2Name,
@@ -256,8 +268,13 @@ export const Bracket: FC = () => {
   const {
     value: winnersSemiFinal1P2Score,
     setValue: setWinnersSemiFinal1P2Score,
-  } = useViewModelInstanceNumber("winnersSemiFinal1/p2/score", defaultBound)
-  setWinnersSemiFinal1P2Score(bracket.winnersSemiFinal[0]?.player2?.score || 0)
+  } = useViewModelInstanceString(
+    "winnersSemiFinal1/p2/bracketScore",
+    defaultBound
+  )
+  setWinnersSemiFinal1P2Score(
+    bracket.winnersSemiFinal[0]?.player2?.score?.toString() || ""
+  )
 
   // Winners Semi Final 2
   const {
@@ -269,8 +286,13 @@ export const Bracket: FC = () => {
   const {
     value: winnersSemiFinal2P1Score,
     setValue: setWinnersSemiFinal2P1Score,
-  } = useViewModelInstanceNumber("winnersSemiFinal2/p1/score", defaultBound)
-  setWinnersSemiFinal2P1Score(bracket.winnersSemiFinal[1]?.player1?.score || 0)
+  } = useViewModelInstanceString(
+    "winnersSemiFinal2/p1/bracketScore",
+    defaultBound
+  )
+  setWinnersSemiFinal2P1Score(
+    bracket.winnersSemiFinal[1]?.player1?.score?.toString() || ""
+  )
 
   const {
     value: winnersSemiFinal2P2Name,
@@ -281,8 +303,13 @@ export const Bracket: FC = () => {
   const {
     value: winnersSemiFinal2P2Score,
     setValue: setWinnersSemiFinal2P2Score,
-  } = useViewModelInstanceNumber("winnersSemiFinal2/p2/score", defaultBound)
-  setWinnersSemiFinal2P2Score(bracket.winnersSemiFinal[1]?.player2?.score || 0)
+  } = useViewModelInstanceString(
+    "winnersSemiFinal2/p2/bracketScore",
+    defaultBound
+  )
+  setWinnersSemiFinal2P2Score(
+    bracket.winnersSemiFinal[1]?.player2?.score?.toString() || ""
+  )
 
   // Losers Final
   const { value: losersFinalP1Name, setValue: setLosersFinalP1Name } =
@@ -290,16 +317,20 @@ export const Bracket: FC = () => {
   setLosersFinalP1Name(bracket.losersFinal[0]?.player1?.name || "")
 
   const { value: losersFinalP1Score, setValue: setLosersFinalP1Score } =
-    useViewModelInstanceNumber("losersFinal/p1/score", defaultBound)
-  setLosersFinalP1Score(bracket.losersFinal[0]?.player1?.score || 0)
+    useViewModelInstanceString("losersFinal/p1/bracketScore", defaultBound)
+  setLosersFinalP1Score(
+    bracket.losersFinal[0]?.player1?.score?.toString() || ""
+  )
 
   const { value: losersFinalP2Name, setValue: setLosersFinalP2Name } =
     useViewModelInstanceString("losersFinal/p2/name", defaultBound)
   setLosersFinalP2Name(bracket.losersFinal[0]?.player2?.name || "")
 
   const { value: losersFinalP2Score, setValue: setLosersFinalP2Score } =
-    useViewModelInstanceNumber("losersFinal/p2/score", defaultBound)
-  setLosersFinalP2Score(bracket.losersFinal[0]?.player2?.score || 0)
+    useViewModelInstanceString("losersFinal/p2/bracketScore", defaultBound)
+  setLosersFinalP2Score(
+    bracket.losersFinal[0]?.player2?.score?.toString() || ""
+  )
 
   // Losers Semi Final
   const { value: losersSemiFinalP1Name, setValue: setLosersSemiFinalP1Name } =
@@ -307,16 +338,20 @@ export const Bracket: FC = () => {
   setLosersSemiFinalP1Name(bracket.losersSemiFinal[0]?.player1?.name || "")
 
   const { value: losersSemiFinalP1Score, setValue: setLosersSemiFinalP1Score } =
-    useViewModelInstanceNumber("losersSemiFinal/p1/score", defaultBound)
-  setLosersSemiFinalP1Score(bracket.losersSemiFinal[0]?.player1?.score || 0)
+    useViewModelInstanceString("losersSemiFinal/p1/bracketScore", defaultBound)
+  setLosersSemiFinalP1Score(
+    bracket.losersSemiFinal[0]?.player1?.score?.toString() || ""
+  )
 
   const { value: losersSemiFinalP2Name, setValue: setLosersSemiFinalP2Name } =
     useViewModelInstanceString("losersSemiFinal/p2/name", defaultBound)
   setLosersSemiFinalP2Name(bracket.losersSemiFinal[0]?.player2?.name || "")
 
   const { value: losersSemiFinalP2Score, setValue: setLosersSemiFinalP2Score } =
-    useViewModelInstanceNumber("losersSemiFinal/p2/score", defaultBound)
-  setLosersSemiFinalP2Score(bracket.losersSemiFinal[0]?.player2?.score || 0)
+    useViewModelInstanceString("losersSemiFinal/p2/bracketScore", defaultBound)
+  setLosersSemiFinalP2Score(
+    bracket.losersSemiFinal[0]?.player2?.score?.toString() || ""
+  )
 
   // Losers Quarter Final 1
   const {
@@ -330,9 +365,12 @@ export const Bracket: FC = () => {
   const {
     value: losersQuarterFinal1P1Score,
     setValue: setLosersQuarterFinal1P1Score,
-  } = useViewModelInstanceNumber("losersQuarterFinal1/p1/score", defaultBound)
+  } = useViewModelInstanceString(
+    "losersQuarterFinal1/p1/bracketScore",
+    defaultBound
+  )
   setLosersQuarterFinal1P1Score(
-    bracket.losersQuarterFinal[0]?.player1?.score || 0
+    bracket.losersQuarterFinal[0]?.player1?.score?.toString() || ""
   )
 
   const {
@@ -346,9 +384,12 @@ export const Bracket: FC = () => {
   const {
     value: losersQuarterFinal1P2Score,
     setValue: setLosersQuarterFinal1P2Score,
-  } = useViewModelInstanceNumber("losersQuarterFinal1/p2/score", defaultBound)
+  } = useViewModelInstanceString(
+    "losersQuarterFinal1/p2/bracketScore",
+    defaultBound
+  )
   setLosersQuarterFinal1P2Score(
-    bracket.losersQuarterFinal[0]?.player2?.score || 0
+    bracket.losersQuarterFinal[0]?.player2?.score?.toString() || ""
   )
 
   // Losers Quarter Final 2
@@ -363,9 +404,12 @@ export const Bracket: FC = () => {
   const {
     value: losersQuarterFinal2P1Score,
     setValue: setLosersQuarterFinal2P1Score,
-  } = useViewModelInstanceNumber("losersQuarterFinal2/p1/score", defaultBound)
+  } = useViewModelInstanceString(
+    "losersQuarterFinal2/p1/bracketScore",
+    defaultBound
+  )
   setLosersQuarterFinal2P1Score(
-    bracket.losersQuarterFinal[1]?.player1?.score || 0
+    bracket.losersQuarterFinal[1]?.player1?.score?.toString() || ""
   )
 
   const {
@@ -379,9 +423,12 @@ export const Bracket: FC = () => {
   const {
     value: losersQuarterFinal2P2Score,
     setValue: setLosersQuarterFinal2P2Score,
-  } = useViewModelInstanceNumber("losersQuarterFinal2/p2/score", defaultBound)
+  } = useViewModelInstanceString(
+    "losersQuarterFinal2/p2/bracketScore",
+    defaultBound
+  )
   setLosersQuarterFinal2P2Score(
-    bracket.losersQuarterFinal[1]?.player2?.score || 0
+    bracket.losersQuarterFinal[1]?.player2?.score?.toString() || ""
   )
 
   // Losers Round 1
@@ -390,16 +437,20 @@ export const Bracket: FC = () => {
   setLosersRound1P1Name(bracket.losersRound[0]?.player1?.name || "")
 
   const { value: losersRound1P1Score, setValue: setLosersRound1P1Score } =
-    useViewModelInstanceNumber("losersRound1/p1/score", defaultBound)
-  setLosersRound1P1Score(bracket.losersRound[0]?.player1?.score || 0)
+    useViewModelInstanceString("losersRound1/p1/bracketScore", defaultBound)
+  setLosersRound1P1Score(
+    bracket.losersRound[0]?.player1?.score?.toString() || ""
+  )
 
   const { value: losersRound1P2Name, setValue: setLosersRound1P2Name } =
     useViewModelInstanceString("losersRound1/p2/name", defaultBound)
   setLosersRound1P2Name(bracket.losersRound[0]?.player2?.name || "")
 
   const { value: losersRound1P2Score, setValue: setLosersRound1P2Score } =
-    useViewModelInstanceNumber("losersRound1/p2/score", defaultBound)
-  setLosersRound1P2Score(bracket.losersRound[0]?.player2?.score || 0)
+    useViewModelInstanceString("losersRound1/p2/bracketScore", defaultBound)
+  setLosersRound1P2Score(
+    bracket.losersRound[0]?.player2?.score?.toString() || ""
+  )
 
   // Losers Round 2
   const { value: losersRound2P1Name, setValue: setLosersRound2P1Name } =
@@ -407,16 +458,20 @@ export const Bracket: FC = () => {
   setLosersRound2P1Name(bracket.losersRound[1]?.player1?.name || "")
 
   const { value: losersRound2P1Score, setValue: setLosersRound2P1Score } =
-    useViewModelInstanceNumber("losersRound2/p1/score", defaultBound)
-  setLosersRound2P1Score(bracket.losersRound[1]?.player1?.score || 0)
+    useViewModelInstanceString("losersRound2/p1/bracketScore", defaultBound)
+  setLosersRound2P1Score(
+    bracket.losersRound[1]?.player1?.score?.toString() || ""
+  )
 
   const { value: losersRound2P2Name, setValue: setLosersRound2P2Name } =
     useViewModelInstanceString("losersRound2/p2/name", defaultBound)
   setLosersRound2P2Name(bracket.losersRound[1]?.player2?.name || "")
 
   const { value: losersRound2P2Score, setValue: setLosersRound2P2Score } =
-    useViewModelInstanceNumber("losersRound2/p2/score", defaultBound)
-  setLosersRound2P2Score(bracket.losersRound[1]?.player2?.score || 0)
+    useViewModelInstanceString("losersRound2/p2/bracketScore", defaultBound)
+  setLosersRound2P2Score(
+    bracket.losersRound[1]?.player2?.score?.toString() || ""
+  )
 
   useAsync(async () => {
     console.log({ setting, loadBracket })
